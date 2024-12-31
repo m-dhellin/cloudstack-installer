@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # c8k.in/stall.sh - Easiest Apache CloudStack Installer
-# Author: Rohit Yadav <rohit@apache.org> and other contributors
-#
-# Install with this command (from your Ubuntu host):
+# Install with this command (from your Ubuntu/EL host):
 #
 # curl -sSfL https://c8k.in/stall.sh | bash
 #
@@ -23,15 +21,17 @@
 # specific language governing permissions and limitations
 # under the License.
 
+# NOTE: This is work-in-progress
+
 set -e
 set -o noglob
 
-CS_VERSION=4.19
+CS_VERSION=4.20
 INTERFACE=
 BRIDGE=cloudbr0
 HOST_IP=
 GATEWAY=
-DNS="8.8.8.8, 1.1.1.1"
+DNS="9.9.9.9, 1.1.1.1"
 
 # --- helper functions for logs ---
 info()
