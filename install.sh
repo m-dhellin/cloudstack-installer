@@ -72,7 +72,9 @@ warn "Work in progress, try again while this is being hacked"
 ### Setup Prerequisites ###
 info "Installing dependencies"
 #apt-get update
-apt-get install -y openssh-server sudo wget jq htop tar nmap bridge-utils
+for dependency in openssh-server sudo wget jq htop tar nmap bridge-utils; do
+    apt install -y "$dependency" || snap install "$dependency"
+done
 
 # FIXME: check for host spec (min 4-8G RAM?) /dev/kvm and
 
